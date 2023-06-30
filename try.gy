@@ -1,8 +1,5 @@
-// plugins used: build, docker pipeline
+// plugins used: docker pipeline
 // setup dockerhub credentials in global security credentials
-// docker stop $(docker ps -a -q)
-// docker rm $(docker ps -a -q)
-// docker system prune --all
 
 
 pipeline{
@@ -17,7 +14,7 @@ pipeline{
 	    
 	    stage('build') {
 	        steps {
-	            sh 'git clone https://github.com/noobx7wt2fDL/proj2.git/'
+	            sh 'git clone https://github.com/noobx7wt2fDL/SLlab-proj2.git'
 	            //sh 'cd proj2'
 	            sh 'cd proj2 && ls && docker build -t tguha-nginx .'
 	            sh 'docker image ls'

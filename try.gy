@@ -15,8 +15,7 @@ pipeline{
 	    stage('build') {
 	        steps {
 	            sh 'git clone https://github.com/noobx7wt2fDL/SLlab-proj2.git'
-	            //sh 'cd proj2'
-	            sh 'cd proj2 && ls && docker build -t tguha-nginx .'
+	            sh 'cd SLlab-proj2 && ls && docker build -t tguha-nginx .'
 	            sh 'docker image ls'
 	        }
 	    }
@@ -50,7 +49,7 @@ pipeline{
                 input('Do you want to proceed?')
             }
         }
-        stage('App ontinuous Delivery Approved') {
+        stage('App Continuous Delivery Approved') {
             steps {
                 sh 'docker run -d -p 80:80 --name=project2-nginx tridevg/nginx-june:v1'
             }

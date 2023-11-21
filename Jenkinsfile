@@ -1,10 +1,12 @@
 // plugins used: docker pipeline
 // setup dockerhub credentials in global security credentials
 
-
+AGENT_LABEL = 'jslave'  # pass slave agent label here
 pipeline{
 
-	agent any
+    agent {
+       label "${AGENT_LABEL}"
+    }
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockercred')

@@ -14,7 +14,7 @@ pipeline{
 	    
 	    stage('build') {
 	        steps {
-	            sh 'git clone https://github.com/noobx7wt2fDL/SLlab-proj2.git'
+	            sh 'git clone https://github.com/adsnjhfyeqw231eas/SLlab-proj2.git'
 	            sh 'cd SLlab-proj2 && ls && docker build -t tguha-nginx .'
 	            sh 'docker image ls'
 	        }
